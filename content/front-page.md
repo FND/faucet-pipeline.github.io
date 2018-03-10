@@ -1,3 +1,5 @@
+layout: front-page  
+
 _faucet_ makes managing web assets a breeze: Whether **pre-processing CSS** or
 **compiling modern JavaScript**, all you need is a few simple lines of
 configuration to take advantage of the front-end community's **established
