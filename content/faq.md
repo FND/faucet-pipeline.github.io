@@ -1,3 +1,5 @@
+title: Frequently Asked Questions  
+
 What's with the name?
 it's a portmanteau of "fejo asset pipeline" - inspired by both fejo.dk and the
 Rails asset pipeline

@@ -1,4 +1,4 @@
-title: Philosophy
+title: Motivation & Philosophy
 
 > Given the choice between making something _my_ problem, and making something
 > _the user's_ problem, I'll choose to make it my problem every time.

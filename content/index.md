@@ -76,14 +76,14 @@ export default function log(level, message) {
 Now we can compile our bundle:
 
 ```shell
-$ ./node_modules/.bin/faucet
+$ npx faucet
 ```
 
-(Note that
-[using `npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
-or defining [npm scripts](https://docs.npmjs.com/misc/scripts) within
-`package.json` avoids having to use the full `./node_modules/.bin` path all the
-time.)
+(`npx` is merely a
+[shortcut](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+for commands in `./node_modules/.bin` -- though eventually you might want to
+define [npm scripts](https://docs.npmjs.com/misc/scripts) within `package.json`
+so you can `npm start`, for example.
 
 That's it! We can now execute that bundle, either in a browser or via Node:
 
