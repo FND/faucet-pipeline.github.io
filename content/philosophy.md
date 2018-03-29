@@ -1,9 +1,26 @@
 title: Philosophy
 
-> given the choice between making something _my_ problem, and making something
-> _the user's_ problem, I'll choose to make it my problem every time
+> Given the choice between making something _my_ problem, and making something
+> _the user's_ problem, I'll choose to make it my problem every time.
 
-— [Jeremy Keith](https://adactio.com/journal/7706)
+--- [Jeremy Keith](https://adactio.com/journal/7706)
+
+faucet has two primary goals: reducing
+[accidental complexity](https://en.wikipedia.org/wiki/No_Silver_Bullet) and
+promoting sustainable source code.
+
+faucet grew out of two conflicting insights: Modern front-end development
+provides _immense_ potential to reduce cognitive load for developers and thus
+make working with code both more enjoyable and maintainable -- thanks to CSS
+pre-processors as well as newly standardized JavaScript modules and syntax. Yet
+at the same time, these very advances significantly increase complexity, fatigue
+and wariness:
+
+> I'd like to use ES6, but haven't set up a transpiler yet
+
+This was a common sentiment among friends and colleagues. While some of that
+complexity is inherent -- compiling inevitably introduces an indirection -- the
+primary hurdle turned out to the complexity of _tooling_.
 
 faucet tries hard to be
 [replaceable](https://martinfowler.com/bliki/SacrificialArchitecture.html) and
