@@ -16,7 +16,8 @@ module.exports = {
 	}],
 	js: [{
 		source: "./views/index.jsx",
-		target: "./dist/views.js",
+		target: "./dist/views.js", // TODO: read from SSG config
+		fingerprint: false,
 		format: "cjs",
 		moduleName: "render",
 		jsx: { pragma: "createElement" }
