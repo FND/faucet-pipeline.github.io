@@ -5,56 +5,50 @@ title: Motivation & Philosophy
 
 --- [Jeremy Keith](https://adactio.com/journal/7706)
 
-faucet has two primary goals: reducing
-[accidental complexity](https://en.wikipedia.org/wiki/No_Silver_Bullet) and
-promoting sustainable source code.
+faucet has two primary goals: reducing accidental complexity and promoting
+sustainable source code. As such, it is designed around intentional constraints
+and a set of core beliefs.
 
-faucet grew out of two conflicting insights: Modern front-end development
-provides _immense_ potential to reduce cognitive load for developers and thus
-make working with code both more enjoyable and maintainable -- thanks to CSS
-pre-processors as well as newly standardized JavaScript modules and syntax. Yet
-at the same time, these very advances significantly increase complexity, fatigue
-and wariness:
+The idea grew out of two conflicting insights: Modern front-end development
+provides immense potential to reduce cognitive load for developers, thus making
+code both more enjoyable and maintainable -- thanks to CSS pre-processors as
+well as newly standardized JavaScript modules and syntax. Yet at the same time,
+these very advances significantly increase complexity, frequently resulting in
+fatigue and wariness:
 
 > I'd like to use ES6, but haven't set up a transpiler yet
 
-This was a common sentiment among friends and colleagues. While some of that
-complexity is inherent -- compiling inevitably introduces an indirection -- the
-primary hurdle turned out to the complexity of _tooling_.
+This sentiment was common among friends and colleagues. While some of that
+complexity is inherent -- compiling inevitably introduces a layer of indirection
+-- the primary hurdle turned out to the complexity of _tooling_. faucet tries to
+shield users from tooling-specific low-level details for both configuration and
+dependency management.
 
 faucet tries hard to be
 [replaceable](https://martinfowler.com/bliki/SacrificialArchitecture.html) and
 to stay out of your way: We believe that source code should not rely on any
 particular build tool, but rather be standards-compliant and thus portable
-across build systems.
+across build systems. Naturally this means that project-specific customization
+is limited, which we consider a useful constraint -- though it means that
+[faucet might not be for everyone](alternatives.html).
 
-As such, it is designed around intentional constraints and might not be for
-everyone. faucet aims for simplicity based on certain assumptions and beliefs
-(e.g. [deletability](https://kellysutton.com/2017/05/29/deletability.html)).
+In practice, this means we've preselected established tools and libraries and
+wrap them in a shell that's easy to understand and operate -- without
+abstracting away the underlying concepts, such as module bundling or
+transpiling. We don't expect to change the underlying tooling frequently, but
+we'll be able to if something better comes along -- without burdening users with
+the details.
 
-----
+The original impetus was to get more people to take adavantage of
+[Rollup](https://rollupjs.org), prompted by Nolan Lawson's
+[The cost of small modules](https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/):
+We're convinced that even when compiling source modules into a bundle, the
+resulting bundle's internals still matter.
 
-getting people to take adavantage of Rollup as a/the primary motivation
-originally prompted by
-[The cost of small modules](https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/),
-in particular the lack of function bloat:
+This evolved into a suite of additional abstractions for similar tasks: CSS
+pre-processing (using [Sass](http://sass-lang.com) by default, if only because
+it happens to be our curent preference), optimizing images and handling static
+assets -- including fingerprinting for HTTP cache optimization.
 
-> every module in Webpack and Browserify gets its own function scope, and is
-> loaded at runtime when require()d from the main script. Rollup and Closure
-> Compiler, on the other hand, just hoist everything into a single function
-> scope (creating variables and namespacing them as necessary).
-
-thus: we care not just about the input, but also about the output
-
-quote cdent on constraints
-
-simple, painless management of web assets/resources
-
-reduces low-level config hassle as well as dependency-management chores
-
-we don't expect to change the underlying tooling frequently, but we'll be able
-to if something better comes along - without burdening users with the details
-e.g. dreading upgrade from Babel v6 to v7?
-
-relying on amazing work by people like … - faucet merely provides a bit of glue
-code on top
+Of course faucet wouldn't be possible without relying on amazing work by a huge
+number of people; we're merely provides a bit of glue code on top.
